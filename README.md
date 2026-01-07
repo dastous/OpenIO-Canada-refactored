@@ -6,7 +6,7 @@ This is a fork of the original **OpenIO-Canada** project created by Maxime Agez.
 **Original Work:**
 - Author: Maxime Agez (maxime.agez@polymtl.ca)
 - Citation: https://doi.org/10.5281/zenodo.8200655
-- Original Repository: [Link to original repository if available]
+- Original Repository: [OpenIO-Canada](https://github.com/CIRAIG/OpenIO-Canada)
 
 **This Fork:**
 - Changes made: Updated to use EXIOBASE Version 3.9.6, refactored for Python 3.14 compatibility, exiobase data checkpoints improvements, scalling and additional documentation.
