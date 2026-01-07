@@ -1,4 +1,17 @@
-## _OpenIO-Canada v2.11_
+## _OpenIO-Canada refactored_
+
+### Attribution and License
+This is a fork of the original **OpenIO-Canada** project created by Maxime Agez.
+
+**Original Work:**
+- Author: Maxime Agez (maxime.agez@polymtl.ca)
+- Citation: https://doi.org/10.5281/zenodo.8200655
+- Original Repository: [Link to original repository if available]
+
+**This Fork:**
+- Changes made: Updated to use EXIOBASE Version 3.9.6, refactored for Python 3.14 compatibility, exiobase data checkpoints improvements, scalling and additional documentation.
+- [License](LICENSE.md)
+
 
 Python class creating Multi-Regional symmetric Environmentally Extended Input-Output (MREEIO) tables for Canada. OpenIO-Canada 
 operates at the provincial level (13 provinces). It can thus be used to compare the environmental impacts of value chains
@@ -11,16 +24,19 @@ OpenIO-Canada covers 492 commodities, 33 GHGs, around 300 pollutants in 3 compar
 
 OpenIO-Canada is connected to the Exiobase global MRIO database to model value chains happening outside Canada.
 
-**_IMPORTANT_** While openIO-Canada v2.11 CAN operate with Exiobase versions 3.9.4, 3.9.5 and 3.9.6, we do NOT recommend 
-using these versions of Exiobase, as there are significant mistakes in the modeling of the mining sector. This triggers
-a drastic overestimation of Canada's own footprint, through its imports of minerals (notably the American imports).
-
 ### Getting started
 
 Clone the repository (or download it) and install the different libraries required to run this Python class (requirements.txt).<br>
-Note that we recommend working with version **3.9** of Python as we can ensure it works for that specific version.<br>
+Note that we are currently updating this repository to work with Python **3.14**. Previously, version **3.9** was recommended.<br>
 Go to the doc folder and start with the Running_openIO-Canada.ipynb file to generate the IO tables. You can then explore 
 how to use openIO-Canada with the other notebooks.
+
+### EXIOBASE Data
+OpenIO-Canada-refactored uses **EXIOBASE IOT 2022 pxp** (Version 3.9.6). Note that there are versions of IOT 2022 available, example:
+- EXIOBASE Version 3.8.2 (754.6 MB) -> if you have follow the link from the original repository, chances are you probably land on the [old version](https://doi.org/10.5281/zenodo.5589597)
+- EXIOBASE Version [3.9.6](https://zenodo.org/records/15689391) (471.6 MB) - **currently in use** 
+
+**Note:** The original repository warned that EXIOBASE versions 3.9.4-3.9.6 contain errors in the mining sector that may overestimate Canada's carbon footprint from imported minerals (particularly from the US). Users should be aware of this limitation when interpreting results.
 
 ### Carbon footprint per capita estimates
 Using openIO-Canada v2.11 (with capitals endogenized) and population estimates from StatCan, we can derive carbon 
@@ -86,14 +102,3 @@ In most cases, users of openIO-Canada will not have access to the breakdown betw
 transportation margins/taxes, and so in the majority of cases, the purchaser price emission factors should be used. If 
 somehow you have access to this breakdown, using the basic price emission factors will allow for a more accurate assessment.
 
-### Contact
-maxime.agez@polymtl.ca
-
-### Citation
-https://doi.org/10.5281/zenodo.8200655
-
-### Scientific studies using openIO-Canada
-- Santiago Zuluaga, Shoshanna Saxe (2025), Leveraging building permit data for large-scale embodied carbon and circularity assessment of residential building construction, Environ. Res.: Infrastruct. Sustain. 5 035015. https://doi.org/10.1088/2634-4505/adfc95
-- Wambersie, L., & Ouellet-Plamondon, C. (2024). Developing a comprehensive account of embodied emissions within the Canadian construction sector. Journal of Industrial Ecology, 1–14. https://doi.org/10.1111/jiec.13548
-- Yoffe, H., et al. (2024). Mapping construction sector greenhouse gas emissions: a crucial step in sustainability meeting increasing housing demands. Environmental research - Infrastructure and sustainability. https://doi.org/10.1088/2634-4505/ad546a
-- Anne de Bortoli, Maxime Agez (2023), Environmentally-extended input-output analyses efficiently sketch large-scale environmental transition plans: Illustration by Canada's road industry, Journal of Cleaner Production, Volume 388, 2023, 136039, ISSN 0959-6526, https://doi.org/10.1016/j.jclepro.2023.136039.
