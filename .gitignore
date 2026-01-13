@@ -2,3 +2,4 @@ __pycache__
 venv/
 Data/StatsCan/
 Data/EXIOBASE/
+.ipynb_checkpoints/
